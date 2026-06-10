@@ -84,8 +84,9 @@ export default function Home() {
           {/* Nav items — each takes equal flex space */}
           {[
             { label: "WORK",     href: "/projects",  n: "01" },
-            { label: "SERVICES", href: "/#services", n: "02" },
-            { label: "CONTACT",  href: "/#contact",  n: "03" },
+            { label: "PEOPLE",   href: "/people",    n: "02" },
+            { label: "SERVICES", href: "/services",  n: "03" },
+            { label: "CONTACT",  href: "/contact",   n: "04" },
           ].map(({ label, href, n }) => (
             <Link
               key={label}
@@ -113,14 +114,14 @@ export default function Home() {
             <div>
               <p className="text-[9px] font-mono text-white/20 tracking-widest mb-2">START A PROJECT</p>
               <a
-                href="mailto:hello@softwarehouse.dev"
+                href="mailto:hello@limiarcore.dev"
                 className="text-xs text-white/50 hover:text-white transition-colors font-mono break-all"
               >
-                hello@softwarehouse.dev
+                hello@limiarcore.dev
               </a>
             </div>
             <a
-              href="mailto:hello@softwarehouse.dev"
+              href="mailto:hello@limiarcore.dev"
               className="flex items-center justify-between px-5 py-3.5 bg-[#CAFF00] text-black text-[10px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity group"
             >
               Send a Brief

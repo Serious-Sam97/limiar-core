@@ -27,7 +27,7 @@ export default function ProjectsPage() {
           <span className="text-[9px] font-mono tracking-[0.2em] text-white/15 border border-white/10 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          {[["Index", "/"], ["Work", "/projects"], ["Services", "/#services"], ["Contact", "/#contact"]].map(([label, href]) => (
+          {[["Index", "/"], ["Work", "/projects"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
               className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Work" ? "text-[#CAFF00]" : "text-white/30 hover:text-white"}`}
             >{label}</Link>
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
           <h1
             className="font-black tracking-tighter wipe-in"
             style={{
-              fontSize: "clamp(5rem, 19vw, 20rem)",
+              fontSize: "clamp(4rem, 13vw, 14rem)",
               color: "transparent",
               WebkitTextStroke: "clamp(2px, 0.25vw, 4px) rgba(240,238,233,0.6)",
               fontFamily: "var(--font-geist-sans)",
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
           <h1
             className="font-black tracking-tighter"
             style={{
-              fontSize: "clamp(5rem, 19vw, 20rem)",
+              fontSize: "clamp(4rem, 13vw, 14rem)",
               color: "#CAFF00",
               fontFamily: "var(--font-geist-sans)",
               lineHeight: 0.85,
@@ -166,7 +166,7 @@ export default function ProjectsPage() {
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           ALL SYSTEMS GO
         </div>
-        <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 QUANTUM TECH</span>
+        <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 LIMIAR CORE</span>
       </footer>
     </main>
   );
