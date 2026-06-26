@@ -83,10 +83,11 @@ export default function Home() {
 
           {/* Nav items — each takes equal flex space */}
           {[
-            { label: "WORK",     href: "/projects",  n: "01" },
-            { label: "PEOPLE",   href: "/people",    n: "02" },
-            { label: "SERVICES", href: "/services",  n: "03" },
-            { label: "CONTACT",  href: "/contact",   n: "04" },
+            { label: "WORK",     href: "/projects",     n: "01" },
+            { label: "LAB",      href: "/experimental", n: "02" },
+            { label: "PEOPLE",   href: "/people",       n: "03" },
+            { label: "SERVICES", href: "/services",     n: "04" },
+            { label: "CONTACT",  href: "/contact",      n: "05" },
           ].map(({ label, href, n }) => (
             <Link
               key={label}
