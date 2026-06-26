@@ -1,0 +1,42 @@
+import Image from "next/image";
+import type { Project } from "@/components/ProjectRows";
+
+// Compact "trusted by" logo strip. Reuses the Project shape so the
+// same client data feeds both this strip and the table below it.
+export default function TrustedBy({
+  clients,
+  accent = "#CAFF00",
+}: {
+  clients: Project[];
+  accent?: string;
+}) {
+  return (
+    <div className="flex items-center gap-x-8 gap-y-3 flex-wrap py-5 border-b border-white/[0.06]">
+      <span className="text-[9px] font-mono tracking-[0.4em] uppercase shrink-0" style={{ color: accent }}>
+        Trusted by
+      </span>
+      <div className="flex items-center gap-6 flex-wrap">
+        {clients.map((c) => (
+          <div
+            key={c.id}
+            className="flex items-center gap-2.5 opacity-75 hover:opacity-100 transition-opacity"
+          >
+            <div className="relative w-7 h-7 border border-white/[0.1] bg-white/[0.03] flex items-center justify-center overflow-hidden shrink-0">
+              {c.icon ? (
+                <Image src={c.icon} alt={c.name} fill className="object-cover" />
+              ) : (
+                <span
+                  className="font-black text-white/40 text-[11px]"
+                  style={{ fontFamily: "var(--font-geist-sans)" }}
+                >
+                  {c.name.charAt(0)}
+                </span>
+              )}
+            </div>
+            <span className="text-sm font-bold tracking-tight text-white/80">{c.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

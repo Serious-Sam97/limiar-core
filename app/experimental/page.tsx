@@ -66,7 +66,7 @@ export default function ExperimentalPage() {
           <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          {[["Index", "/"], ["Work", "/projects"], ["Lab", "/experimental"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
+          {[["Index", "/"], ["Work", "/projects"], ["Lab", "/experimental"], ["People", "/people"], ["Clients", "/clients"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
               className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Lab" ? "text-[#FF2D55]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>
@@ -129,8 +129,8 @@ export default function ExperimentalPage() {
         {/* Column headers */}
         <div className="grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-6 items-center">
           <span className="col-span-1">ID</span>
-          <span className="col-span-1">Icon</span>
-          <span className="col-span-4">Project</span>
+          <span className="col-span-2">Icon</span>
+          <span className="col-span-3">Project</span>
           <span className="col-span-2">Category</span>
           <span className="col-span-1">Year</span>
           <span className="col-span-1 text-right">Status</span>

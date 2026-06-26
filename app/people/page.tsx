@@ -74,7 +74,7 @@ export default function PeoplePage() {
           <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          {[["Index", "/"], ["Work", "/projects"], ["Lab", "/experimental"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
+          {[["Index", "/"], ["Work", "/projects"], ["Lab", "/experimental"], ["People", "/people"], ["Clients", "/clients"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
               className={`text-[10px] tracking-widest font-mono transition-colors ${label === "People" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>

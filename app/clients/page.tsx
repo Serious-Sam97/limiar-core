@@ -1,56 +1,13 @@
 import Link from "next/link";
-import ProjectRows, { type Project } from "@/components/ProjectRows";
+import ProjectRows from "@/components/ProjectRows";
+import TrustedBy from "@/components/TrustedBy";
+import { clients } from "@/lib/clients";
 
 export const metadata = {
-  title: "Work — Limiar Core",
+  title: "Clients — Limiar Core",
 };
 
-// ── Edit project details here ──────────────────────────────
-// icon:    path to a logo in /public (e.g. "/projects/parliamo.png"),
-//          or "" to fall back to a monogram of the first letter.
-// status:  "LIVE" (acid) | "IN BUILD" | "PROTOTYPE" (dim)
-// url:     live link — renders a "Visit" button; "" renders "Soon".
-// images:  screenshots shown in the modal carousel (put files in /public).
-// details: longer text in the modal; falls back to blurb if empty.
-const projects: Project[] = [
-  {
-    id: "LC-001",
-    name: "Parliamo",
-    blurb: "Corporate communication platform: workspaces, channels, real-time messaging, DMs, and voice/video calls.",
-    category: "Web · Product",
-    year: "2026",
-    status: "IN BUILD",
-    icon: "/parliamo.png",
-    url: "https://www.parliamo.com.br",
-    images: [
-      '/parliamo01.png',
-      '/parliamo02.png',
-    ],
-    details: "Parliamo is the real-time collaboration platform that turns corporate conversations into real productivity. By combining topic-based channels, direct messaging, and smart integrations within a fluid, intuitive interface, Parliamo is designed to bring teams closer, align projects, and eliminate the noise of daily communication—because collaboration should be as natural as a good conversation.",
-  },
-  {
-    id: "LC-002",
-    name: "Yondra",
-    blurb: `Yondra is a streamlined project management platform built for modern dev teams — think Jira, without the bloat.
-Track issues, plan sprints, and ship faster with an interface that gets out of your way. From backlog grooming to deployment, Yondra keeps your team aligned and your workflow moving.
-Built for teams who actually ship.`,
-    category: "Web · Product",
-    year: "2026",
-    status: "IN BUILD",
-    icon: "/yondra.png",
-    url: "https://www.yondra.net",
-    images: [
-      '/yondra01.png',
-      '/yondra02.png',
-      '/yondra03.png',
-    ],
-    details: `Yondra is a streamlined project management platform built for modern dev teams — think Jira, without the bloat.
-Track issues, plan sprints, and ship faster with an interface that gets out of your way. From backlog grooming to deployment, Yondra keeps your team aligned and your workflow moving.
-Built for teams who actually ship.`,
-  },
-];
-
-export default function ProjectsPage() {
+export default function ClientsPage() {
   return (
     <main className="min-h-screen bg-[#080808] text-[#F0EEE9] flex flex-col">
 
@@ -67,7 +24,7 @@ export default function ProjectsPage() {
         <nav className="hidden md:flex items-center gap-8">
           {[["Index", "/"], ["Work", "/projects"], ["Lab", "/experimental"], ["People", "/people"], ["Clients", "/clients"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
-              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Work" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
+              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Clients" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>
           ))}
         </nav>
@@ -84,40 +41,40 @@ export default function ProjectsPage() {
           className="absolute top-0 right-0 leading-none font-black text-white/[0.015] select-none pointer-events-none"
           style={{ fontSize: "38vw", lineHeight: 0.8, fontFamily: "var(--font-geist-sans)" }}
         >
-          W
+          C
         </span>
 
         {/* Eyebrow */}
         <div className="flex items-center gap-4 mb-4 relative z-10">
-          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">03</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">08</span>
           <div className="h-px flex-1 bg-white/[0.06]" />
-          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">SELECTED WORK</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">TRUSTED BY</span>
         </div>
 
-        {/* "WORK" — two-tone outline + solid */}
+        {/* "CLIENTS" — two-tone outline + solid */}
         <div className="relative z-10 flex items-end gap-0 leading-none -mb-2">
           <h1
             className="font-black tracking-tighter wipe-in"
             style={{
-              fontSize: "clamp(4rem, 13vw, 14rem)",
+              fontSize: "clamp(3rem, 11vw, 12rem)",
               color: "transparent",
               WebkitTextStroke: "clamp(2px, 0.25vw, 4px) rgba(240,238,233,0.6)",
               fontFamily: "var(--font-geist-sans)",
               lineHeight: 0.85,
             }}
           >
-            WO
+            CLI
           </h1>
           <h1
             className="font-black tracking-tighter"
             style={{
-              fontSize: "clamp(4rem, 13vw, 14rem)",
+              fontSize: "clamp(3rem, 11vw, 12rem)",
               color: "#CAFF00",
               fontFamily: "var(--font-geist-sans)",
               lineHeight: 0.85,
             }}
           >
-            RK
+            ENTS
           </h1>
         </div>
       </section>
@@ -125,19 +82,22 @@ export default function ProjectsPage() {
       {/* ── TABLE ── */}
       <section className="flex-1 flex flex-col px-8 md:px-14">
 
+        {/* Trusted-by logo strip */}
+        <TrustedBy clients={clients} />
+
         {/* Column headers */}
-        <div className="grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-6 items-center">
+        <div className="grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-4 items-center">
           <span className="col-span-1">ID</span>
-          <span className="col-span-2">Icon</span>
-          <span className="col-span-3">Project</span>
-          <span className="col-span-2">Category</span>
-          <span className="col-span-1">Year</span>
+          <span className="col-span-2">Logo</span>
+          <span className="col-span-3">Client</span>
+          <span className="col-span-2">Industry</span>
+          <span className="col-span-1">Since</span>
           <span className="col-span-1 text-right">Status</span>
           <span className="col-span-2 text-right">Access</span>
         </div>
 
-        {/* Project rows + detail modal (client) */}
-        <ProjectRows projects={projects} />
+        {/* Client rows + case-study modal (client) */}
+        <ProjectRows projects={clients} />
 
         {/* Spacer — keeps the table top-aligned as entries grow */}
         <div className="flex-1" />
@@ -151,7 +111,7 @@ export default function ProjectsPage() {
         </Link>
         <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/40">
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
-          ALL SYSTEMS GO
+          FIRST OF MANY
         </div>
         <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2026 LIMIAR CORE</span>
       </footer>

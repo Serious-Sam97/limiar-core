@@ -72,18 +72,18 @@ export default function ProjectRows({
             </span>
 
             {/* Icon — opens modal */}
-            <div className="col-span-1">
+            <div className="col-span-2">
               <button
                 type="button"
                 onClick={() => open(p)}
                 aria-label={`Open ${name} details`}
-                className="relative w-10 h-10 md:w-12 md:h-12 border border-white/[0.1] bg-white/[0.03] flex items-center justify-center overflow-hidden cursor-pointer hover:border-white/30 transition-colors"
+                className="relative w-14 h-14 md:w-20 md:h-20 border border-white/[0.1] bg-white/[0.03] flex items-center justify-center overflow-hidden cursor-pointer hover:border-white/30 transition-colors"
               >
                 {icon ? (
                   <Image src={icon} alt={`${name} icon`} fill className="object-cover" />
                 ) : (
                   <span
-                    className="font-black text-white/40 group-hover:text-[var(--accent)] transition-colors"
+                    className="font-black text-white/40 group-hover:text-[var(--accent)] transition-colors text-xl md:text-3xl"
                     style={{ fontFamily: "var(--font-geist-sans)" }}
                   >
                     {name.charAt(0)}
@@ -93,7 +93,7 @@ export default function ProjectRows({
             </div>
 
             {/* Name — opens modal */}
-            <div className="col-span-4 flex flex-col gap-1 items-start">
+            <div className="col-span-3 flex flex-col gap-1 items-start">
               <button
                 type="button"
                 onClick={() => open(p)}

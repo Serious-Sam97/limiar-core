@@ -1,4 +1,6 @@
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
+import { clients } from "@/lib/clients";
 
 export default function Home() {
   return (
@@ -86,8 +88,9 @@ export default function Home() {
             { label: "WORK",     href: "/projects",     n: "01" },
             { label: "LAB",      href: "/experimental", n: "02" },
             { label: "PEOPLE",   href: "/people",       n: "03" },
-            { label: "SERVICES", href: "/services",     n: "04" },
-            { label: "CONTACT",  href: "/contact",      n: "05" },
+            { label: "CLIENTS",  href: "/clients",      n: "04" },
+            { label: "SERVICES", href: "/services",     n: "05" },
+            { label: "CONTACT",  href: "/contact",      n: "06" },
           ].map(({ label, href, n }) => (
             <Link
               key={label}
@@ -130,6 +133,11 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* ── TRUSTED BY ── */}
+      <div className="border-t border-white/[0.06] px-8 md:px-12 shrink-0">
+        <TrustedBy clients={clients} />
       </div>
 
       {/* ── THIN BOTTOM BAR ── */}
