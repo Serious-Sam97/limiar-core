@@ -1,0 +1,136 @@
+// Português (BR) — chrome de UI e textos de página.
+// Os textos das listas de dados (descrições de projetos/clientes, bios da
+// equipe, descrições de serviços) ficam nos próprios arquivos de dados via
+// o tipo `Localized`, não aqui.
+
+import type enDict from "@/lib/dictionaries/en-us";
+
+const dict: typeof enDict = {
+  nav: {
+    index: "Início",
+    work: "Trabalhos",
+    lab: "Lab",
+    people: "Equipe",
+    clients: "Clientes",
+    services: "Serviços",
+    contact: "Contato",
+  },
+  common: {
+    openForWork: "ABERTO A PROJETOS",
+    backToIndex: "Voltar ao Início",
+    allSystemsGo: "TUDO OPERACIONAL",
+    trustedBy: "Confiam em nós",
+    visit: "Visitar",
+    soon: "Em breve",
+    visitSite: "Visitar site →",
+    noPreview: "Sem prévia ainda",
+  },
+  cols: {
+    id: "ID",
+    icon: "Ícone",
+    logo: "Logo",
+    project: "Projeto",
+    client: "Cliente",
+    category: "Categoria",
+    industry: "Setor",
+    year: "Ano",
+    since: "Desde",
+    status: "Status",
+    access: "Acesso",
+    service: "Serviço",
+    description: "Descrição",
+    stackFocus: "Stack / Foco",
+    output: "Resultado",
+    portrait: "Retrato",
+    identity: "Identidade",
+    bio: "Bio",
+  },
+  // Big display titles, split into [outline half, solid-accent half].
+  titles: {
+    work: ["TRABA", "LHOS"],
+    lab: ["EXPERI", "MENTOS"],
+    people: ["EQUI", "PE"],
+    clients: ["CLI", "ENTES"],
+    services: ["SERVI", "ÇOS"],
+    contact: ["CON", "TATO"],
+  },
+  landing: {
+    tagline1: "Problemas difíceis.",
+    tagline2: "Entregues com precisão.",
+    est: "DESDE 2026",
+    digital: "DIGITAL",
+    startProject: "INICIE UM PROJETO",
+    sendBrief: "Enviar Briefing",
+    viewWork: "Ver Trabalhos →",
+  },
+  work: {
+    eyebrow: "TRABALHOS SELECIONADOS",
+  },
+  lab: {
+    eyebrow: "O LABORATÓRIO · SEM PROMESSAS",
+    footer: "MODO PESQUISA",
+  },
+  people: {
+    eyebrow: "A EQUIPE",
+    footer: "CAPACIDADE: SELETIVA · REMOTO PRIMEIRO",
+    workWithUs: "Trabalhe conosco →",
+  },
+  clients: {
+    eyebrow: "CONFIAM EM NÓS",
+    footer: "O PRIMEIRO DE MUITOS",
+  },
+  services: {
+    eyebrow: "O QUE FAZEMOS",
+    footerNote: "FEITO PARA O SEU PROBLEMA",
+    startProject: "Iniciar um projeto →",
+  },
+  contact: {
+    eyebrow: "FALE CONOSCO",
+    directLine: "Linha direta",
+    availability: "Disponibilidade",
+    availabilityValue: "Aberto a novos projetos",
+    base: "Base",
+    baseValue: "Brasil — Remoto primeiro",
+    responseTime: "Tempo de resposta",
+    responseValue: "Em até 24h",
+    tagline1: "Sem reuniões de descoberta por obrigação.",
+    tagline2: "Venha com um problema real.",
+    sendBriefTitle: "Envie um briefing",
+    sendBriefSub: "Conte o que você está construindo. Responderemos com honestidade.",
+    copy: "COPIAR",
+    copied: "COPIADO ✓",
+    form: {
+      name: "Nome",
+      namePh: "Seu nome",
+      company: "Empresa",
+      companyPh: "Opcional",
+      email: "Email",
+      emailPh: "voce@email.com",
+      need: "Do que você precisa?",
+      selectService: "Selecione um serviço",
+      message: "O briefing",
+      messagePh: "O que você está construindo? Qual é o problema? Como é o resultado final?",
+      submit: "Enviar briefing",
+    },
+    serviceOptions: {
+      product: "Engenharia de Produto",
+      qa: "Garantia de Qualidade",
+      architecture: "Arquitetura de Sistemas",
+      consulting: "Consultoria Técnica",
+      strategy: "Estratégia de Negócio e Produto",
+      other: "Outro assunto",
+    },
+  },
+  statuses: {
+    "LIVE": "NO AR",
+    "IN BUILD": "EM OBRA",
+    "PROTOTYPE": "PROTÓTIPO",
+    "WIP": "EM CURSO",
+    "ARCHIVED": "ARQUIVADO",
+    "ACTIVE": "ATIVO",
+    "ONGOING": "EM CURSO",
+    "DELIVERED": "ENTREGUE",
+  },
+};
+
+export default dict;

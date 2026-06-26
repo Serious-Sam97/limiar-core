@@ -16,13 +16,32 @@ export type Project = {
   details?: string;
 };
 
+export type RowLabels = {
+  visit: string;
+  soon: string;
+  visitSite: string;
+  noPreview: string;
+};
+
+const DEFAULT_LABELS: RowLabels = {
+  visit: "Visit",
+  soon: "Soon",
+  visitSite: "Visit site →",
+  noPreview: "No preview yet",
+};
+
 export default function ProjectRows({
   projects,
   accent = "#CAFF00",
+  labels = DEFAULT_LABELS,
+  statusLabels,
 }: {
   projects: Project[];
   accent?: string;
+  labels?: RowLabels;
+  statusLabels?: Record<string, string>;
 }) {
+  const statusText = (s: string) => statusLabels?.[s] ?? s;
   const [active, setActive] = useState<Project | null>(null);
   const [slide, setSlide] = useState(0);
 
@@ -121,7 +140,7 @@ export default function ProjectRows({
                     : { color: "rgba(240,238,233,0.55)", borderColor: "rgba(255,255,255,0.12)" }
                 }
               >
-                {status}
+                {statusText(status)}
               </span>
             </div>
 
@@ -135,12 +154,12 @@ export default function ProjectRows({
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"
                   style={{ background: accent }}
                 >
-                  Visit
+                  {labels.visit}
                   <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </a>
               ) : (
                 <span className="inline-flex items-center px-3 py-1.5 border border-white/[0.12] text-white/40 text-[9px] font-black tracking-widest uppercase cursor-not-allowed">
-                  Soon
+                  {labels.soon}
                 </span>
               )}
             </div>
@@ -246,7 +265,7 @@ export default function ProjectRows({
                   >
                     {active.name.charAt(0)}
                   </span>
-                  <span className="text-[9px] font-mono tracking-[0.3em] text-white/30 uppercase">No preview yet</span>
+                  <span className="text-[9px] font-mono tracking-[0.3em] text-white/30 uppercase">{labels.noPreview}</span>
                 </div>
               )}
             </div>
@@ -265,7 +284,7 @@ export default function ProjectRows({
                     className="inline-flex items-center gap-1.5 px-4 py-2 text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"
                     style={{ background: accent }}
                   >
-                    Visit site →
+                    {labels.visitSite}
                   </a>
                 )}
                 <span
@@ -276,7 +295,7 @@ export default function ProjectRows({
                       : { color: "rgba(240,238,233,0.55)", borderColor: "rgba(255,255,255,0.12)" }
                   }
                 >
-                  {active.status}
+                  {statusText(active.status)}
                 </span>
               </div>
             </div>

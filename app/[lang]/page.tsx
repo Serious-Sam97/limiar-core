@@ -1,17 +1,32 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import TrustedBy from "@/components/TrustedBy";
+import LangSwitcher from "@/components/LangSwitcher";
 import { clients } from "@/lib/clients";
+import { isLocale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionaries";
 
-export default function Home() {
+const NAV = [
+  { key: "work", seg: "/projects", n: "01" },
+  { key: "lab", seg: "/experimental", n: "02" },
+  { key: "people", seg: "/people", n: "03" },
+  { key: "clients", seg: "/clients", n: "04" },
+  { key: "services", seg: "/services", n: "05" },
+  { key: "contact", seg: "/contact", n: "06" },
+] as const;
+
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
+
   return (
     <main className="h-screen bg-[#080808] text-[#F0EEE9] overflow-hidden flex flex-col">
 
       {/* ── SINGLE VIEWPORT — split layout ── */}
       <div className="flex-1 grid" style={{ gridTemplateColumns: "1fr clamp(280px, 22vw, 420px)" }}>
 
-        {/* ─────────────────────────────────────
-            LEFT — identity
-        ───────────────────────────────────── */}
+        {/* LEFT — identity */}
         <div className="flex flex-col p-8 md:p-12 border-r border-white/[0.06] relative overflow-hidden">
 
           {/* Huge ghost letters — decorative */}
@@ -32,10 +47,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Center: title — outline vs solid, staggered */}
+          {/* Center: title */}
           <div className="flex-1 flex flex-col justify-center relative z-10">
-
-            {/* "QUANTUM" — hollow outline, wipe-in reveal */}
             <h1
               className="font-black tracking-tighter leading-[0.85] block wipe-in"
               style={{
@@ -48,13 +61,11 @@ export default function Home() {
               LIMIAR
             </h1>
 
-            {/* Thin rule — punctuates the space between words */}
             <div className="flex items-center gap-3 my-1">
               <div className="h-px bg-[#CAFF00]/40" style={{ width: "clamp(2rem, 5vw, 5rem)" }} />
-              <span className="text-[8px] font-mono text-white/35 tracking-[0.3em]">EST.2026</span>
+              <span className="text-[8px] font-mono text-white/35 tracking-[0.3em]">{dict.landing.est}</span>
             </div>
 
-            {/* "TECH" — solid, larger, right-aligned within left panel */}
             <h1
               className="font-black tracking-tighter leading-[0.85] text-[#CAFF00] self-end pr-6"
               style={{ fontSize: "clamp(4rem, 11vw, 12rem)" }}
@@ -68,55 +79,48 @@ export default function Home() {
             <div>
               <div className="w-6 h-px bg-[#CAFF00] mb-3" />
               <p className="text-white/65 text-sm leading-snug">
-                Hard problems.<br />Shipped clean.
+                {dict.landing.tagline1}<br />{dict.landing.tagline2}
               </p>
             </div>
             <div className="text-right">
-              <p className="text-[9px] font-mono text-white/40 tracking-widest">EST. 2026</p>
-              <p className="text-[9px] font-mono text-white/40 tracking-widest">DIGITAL</p>
+              <p className="text-[9px] font-mono text-white/40 tracking-widest">{dict.landing.est}</p>
+              <p className="text-[9px] font-mono text-white/40 tracking-widest">{dict.landing.digital}</p>
             </div>
           </div>
         </div>
 
-        {/* ─────────────────────────────────────
-            RIGHT — navigation + CTA
-        ───────────────────────────────────── */}
+        {/* RIGHT — navigation + CTA */}
         <div className="flex flex-col">
 
-          {/* Nav items — each takes equal flex space */}
-          {[
-            { label: "WORK",     href: "/projects",     n: "01" },
-            { label: "LAB",      href: "/experimental", n: "02" },
-            { label: "PEOPLE",   href: "/people",       n: "03" },
-            { label: "CLIENTS",  href: "/clients",      n: "04" },
-            { label: "SERVICES", href: "/services",     n: "05" },
-            { label: "CONTACT",  href: "/contact",      n: "06" },
-          ].map(({ label, href, n }) => (
+          {NAV.map(({ key, seg, n }) => (
             <Link
-              key={label}
-              href={href}
+              key={key}
+              href={`/${lang}${seg}`}
               className="flex-1 border-b border-white/[0.06] flex items-center justify-between px-7 group hover:bg-white/[0.025] transition-colors"
             >
               <div className="flex items-baseline gap-4">
                 <span className="text-[9px] font-mono text-white/45">{n}</span>
-                <span className="text-2xl md:text-3xl font-black text-white group-hover:text-[#CAFF00] transition-colors tracking-tight">
-                  {label}
+                <span className="text-2xl md:text-3xl font-black text-white group-hover:text-[#CAFF00] transition-colors tracking-tight uppercase">
+                  {dict.nav[key]}
                 </span>
               </div>
               <span className="text-white/20 text-lg group-hover:text-[#CAFF00] group-hover:translate-x-1 transition-all">→</span>
             </Link>
           ))}
 
-          {/* Status */}
-          <div className="border-b border-white/[0.06] px-7 py-4 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse shrink-0" />
-            <span className="text-[9px] font-mono text-white/45 tracking-[0.25em]">OPEN FOR WORK</span>
+          {/* Status + language */}
+          <div className="border-b border-white/[0.06] px-7 py-4 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse shrink-0" />
+              <span className="text-[9px] font-mono text-white/45 tracking-[0.25em]">{dict.common.openForWork}</span>
+            </div>
+            <LangSwitcher current={lang} />
           </div>
 
           {/* CTA block */}
           <div className="flex-1 px-7 py-6 flex flex-col justify-between min-h-0">
             <div>
-              <p className="text-[9px] font-mono text-white/45 tracking-widest mb-2">START A PROJECT</p>
+              <p className="text-[9px] font-mono text-white/45 tracking-widest mb-2">{dict.landing.startProject}</p>
               <a
                 href="mailto:hello@limiarcore.dev"
                 className="text-xs text-white/65 hover:text-white transition-colors font-mono break-all"
@@ -128,7 +132,7 @@ export default function Home() {
               href="mailto:hello@limiarcore.dev"
               className="flex items-center justify-between px-5 py-3.5 bg-[#CAFF00] text-black text-[10px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity group"
             >
-              Send a Brief
+              {dict.landing.sendBrief}
               <span className="group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           </div>
@@ -137,7 +141,7 @@ export default function Home() {
 
       {/* ── TRUSTED BY ── */}
       <div className="border-t border-white/[0.06] px-8 md:px-12 shrink-0">
-        <TrustedBy clients={clients} />
+        <TrustedBy clients={clients} label={dict.common.trustedBy} />
       </div>
 
       {/* ── THIN BOTTOM BAR ── */}
@@ -148,10 +152,10 @@ export default function Home() {
           <span className="text-[9px] font-mono text-white/40 tracking-widest">SOFTWARE HOUSE</span>
         </div>
         <Link
-          href="/projects"
+          href={`/${lang}/projects`}
           className="text-[9px] font-mono text-white/45 hover:text-[#CAFF00] tracking-widest transition-colors uppercase"
         >
-          View Work →
+          {dict.landing.viewWork}
         </Link>
       </div>
 

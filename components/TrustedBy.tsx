@@ -1,19 +1,22 @@
 import Image from "next/image";
-import type { Project } from "@/components/ProjectRows";
 
-// Compact "trusted by" logo strip. Reuses the Project shape so the
-// same client data feeds both this strip and the table below it.
+// Compact "trusted by" logo strip. Only needs id/name/icon, so it accepts
+// both resolved Projects and localized ClientSource entries.
+type LogoEntry = { id: string; name: string; icon: string };
+
 export default function TrustedBy({
   clients,
   accent = "#CAFF00",
+  label = "Trusted by",
 }: {
-  clients: Project[];
+  clients: LogoEntry[];
   accent?: string;
+  label?: string;
 }) {
   return (
     <div className="flex items-center gap-x-8 gap-y-3 flex-wrap py-5 border-b border-white/[0.06]">
       <span className="text-[9px] font-mono tracking-[0.4em] uppercase shrink-0" style={{ color: accent }}>
-        Trusted by
+        {label}
       </span>
       <div className="flex items-center gap-6 flex-wrap">
         {clients.map((c) => (
