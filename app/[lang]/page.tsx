@@ -122,14 +122,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <div>
               <p className="text-[9px] font-mono text-white/45 tracking-widest mb-2">{dict.landing.startProject}</p>
               <a
-                href="mailto:hello@limiarcore.dev"
+                href="mailto:contact@limiarcore.com"
                 className="text-xs text-white/65 hover:text-white transition-colors font-mono break-all"
               >
-                hello@limiarcore.dev
+                contact@limiarcore.com
               </a>
             </div>
             <a
-              href="mailto:hello@limiarcore.dev"
+              href="mailto:contact@limiarcore.com"
               className="flex items-center justify-between px-5 py-3.5 bg-[#CAFF00] text-black text-[10px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity group"
             >
               {dict.landing.sendBrief}

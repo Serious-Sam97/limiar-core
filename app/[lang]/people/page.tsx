@@ -268,7 +268,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
         <div className="flex items-center gap-4">
           <span className="text-[9px] font-mono text-white/40 tracking-widest">{dict.people.footer}</span>
           <a
-            href="mailto:hello@limiarcore.dev"
+            href="mailto:contact@limiarcore.com"
             className="flex items-center gap-2 px-4 py-1.5 bg-[#CAFF00] text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"
           >
             {dict.people.workWithUs}

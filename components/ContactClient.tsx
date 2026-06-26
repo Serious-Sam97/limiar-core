@@ -13,7 +13,7 @@ export default function ContactClient({
   const [copied, setCopied] = useState(false);
 
   const copy = () => {
-    navigator.clipboard.writeText("hello@limiarcore.dev");
+    navigator.clipboard.writeText("contact@limiarcore.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -71,7 +71,7 @@ export default function ContactClient({
               <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-2">{c.directLine}</p>
               <button onClick={copy} className="group flex items-center gap-3 text-left">
                 <span className="text-[#F0EEE9] font-mono text-sm group-hover:text-[#CAFF00] transition-colors">
-                  hello@limiarcore.dev
+                  contact@limiarcore.com
                 </span>
                 <span className="text-[8px] font-mono tracking-widest text-white/45 border border-white/[0.08] px-1.5 py-0.5 group-hover:border-[#CAFF00]/30 group-hover:text-[#CAFF00]/50 transition-colors">
                   {copied ? c.copied : c.copy}
@@ -119,7 +119,7 @@ export default function ContactClient({
           <p className="text-white/60 text-xs">{c.sendBriefSub}</p>
         </div>
 
-        <form action="mailto:hello@limiarcore.dev" method="get" encType="text/plain" className="flex flex-col gap-4">
+        <form action="mailto:contact@limiarcore.com" method="get" encType="text/plain" className="flex flex-col gap-4">
 
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-1.5">
