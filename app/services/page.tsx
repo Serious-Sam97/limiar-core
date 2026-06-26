@@ -182,7 +182,7 @@ export default function ServicesPage() {
             Start a project →
           </Link>
         </div>
-        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
+        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2026 LIMIAR CORE</span>
       </footer>
     </main>
   );

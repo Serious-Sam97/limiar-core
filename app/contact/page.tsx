@@ -237,7 +237,7 @@ export default function ContactPage() {
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           ALL SYSTEMS GO
         </div>
-        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
+        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2026 LIMIAR CORE</span>
       </footer>
     </main>
   );

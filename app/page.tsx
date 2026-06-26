@@ -49,7 +49,7 @@ export default function Home() {
             {/* Thin rule — punctuates the space between words */}
             <div className="flex items-center gap-3 my-1">
               <div className="h-px bg-[#CAFF00]/40" style={{ width: "clamp(2rem, 5vw, 5rem)" }} />
-              <span className="text-[8px] font-mono text-white/35 tracking-[0.3em]">EST.2025</span>
+              <span className="text-[8px] font-mono text-white/35 tracking-[0.3em]">EST.2026</span>
             </div>
 
             {/* "TECH" — solid, larger, right-aligned within left panel */}
@@ -70,7 +70,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-right">
-              <p className="text-[9px] font-mono text-white/40 tracking-widest">EST. 2025</p>
+              <p className="text-[9px] font-mono text-white/40 tracking-widest">EST. 2026</p>
               <p className="text-[9px] font-mono text-white/40 tracking-widest">DIGITAL</p>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function Home() {
       {/* ── THIN BOTTOM BAR ── */}
       <div className="border-t border-white/[0.06] px-8 md:px-12 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-6">
-          <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
+          <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2026 LIMIAR CORE</span>
           <span className="text-white/20 text-[9px]">·</span>
           <span className="text-[9px] font-mono text-white/40 tracking-widest">SOFTWARE HOUSE</span>
         </div>
