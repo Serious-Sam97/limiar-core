@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+build
+.git
+.gitignore
+npm-debug.log*
+.DS_Store
+.env*
+.vercel
+*.tsbuildinfo
+README.md
+Dockerfile
+.dockerignore
+docker-compose.yml
+.claude
+coverage
