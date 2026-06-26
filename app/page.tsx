@@ -24,9 +24,9 @@ export default function Home() {
           <div className="flex items-center gap-2.5 relative z-10">
             <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center shrink-0">LC</span>
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-mono tracking-[0.3em] text-white/30 uppercase">Limiar Core</span>
-              <span className="text-white/10 text-[10px]">·</span>
-              <span className="text-[9px] font-mono tracking-[0.2em] text-white/15 uppercase border border-white/10 px-1.5 py-0.5">Software House</span>
+              <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
+              <span className="text-white/20 text-[10px]">·</span>
+              <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 uppercase border border-white/15 px-1.5 py-0.5">Software House</span>
             </div>
           </div>
 
@@ -49,7 +49,7 @@ export default function Home() {
             {/* Thin rule — punctuates the space between words */}
             <div className="flex items-center gap-3 my-1">
               <div className="h-px bg-[#CAFF00]/40" style={{ width: "clamp(2rem, 5vw, 5rem)" }} />
-              <span className="text-[8px] font-mono text-white/15 tracking-[0.3em]">EST.2025</span>
+              <span className="text-[8px] font-mono text-white/35 tracking-[0.3em]">EST.2025</span>
             </div>
 
             {/* "TECH" — solid, larger, right-aligned within left panel */}
@@ -65,13 +65,13 @@ export default function Home() {
           <div className="flex items-end justify-between relative z-10">
             <div>
               <div className="w-6 h-px bg-[#CAFF00] mb-3" />
-              <p className="text-white/40 text-sm leading-snug">
+              <p className="text-white/65 text-sm leading-snug">
                 Hard problems.<br />Shipped clean.
               </p>
             </div>
             <div className="text-right">
-              <p className="text-[9px] font-mono text-white/15 tracking-widest">EST. 2025</p>
-              <p className="text-[9px] font-mono text-white/15 tracking-widest">DIGITAL</p>
+              <p className="text-[9px] font-mono text-white/40 tracking-widest">EST. 2025</p>
+              <p className="text-[9px] font-mono text-white/40 tracking-widest">DIGITAL</p>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function Home() {
               className="flex-1 border-b border-white/[0.06] flex items-center justify-between px-7 group hover:bg-white/[0.025] transition-colors"
             >
               <div className="flex items-baseline gap-4">
-                <span className="text-[9px] font-mono text-white/20">{n}</span>
+                <span className="text-[9px] font-mono text-white/45">{n}</span>
                 <span className="text-2xl md:text-3xl font-black text-white group-hover:text-[#CAFF00] transition-colors tracking-tight">
                   {label}
                 </span>
@@ -106,16 +106,16 @@ export default function Home() {
           {/* Status */}
           <div className="border-b border-white/[0.06] px-7 py-4 flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse shrink-0" />
-            <span className="text-[9px] font-mono text-white/30 tracking-[0.25em]">OPEN FOR WORK</span>
+            <span className="text-[9px] font-mono text-white/45 tracking-[0.25em]">OPEN FOR WORK</span>
           </div>
 
           {/* CTA block */}
           <div className="flex-1 px-7 py-6 flex flex-col justify-between min-h-0">
             <div>
-              <p className="text-[9px] font-mono text-white/20 tracking-widest mb-2">START A PROJECT</p>
+              <p className="text-[9px] font-mono text-white/45 tracking-widest mb-2">START A PROJECT</p>
               <a
                 href="mailto:hello@limiarcore.dev"
-                className="text-xs text-white/50 hover:text-white transition-colors font-mono break-all"
+                className="text-xs text-white/65 hover:text-white transition-colors font-mono break-all"
               >
                 hello@limiarcore.dev
               </a>
@@ -134,13 +134,13 @@ export default function Home() {
       {/* ── THIN BOTTOM BAR ── */}
       <div className="border-t border-white/[0.06] px-8 md:px-12 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-6">
-          <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 LIMIAR CORE</span>
-          <span className="text-white/10 text-[9px]">·</span>
-          <span className="text-[9px] font-mono text-white/15 tracking-widest">SOFTWARE HOUSE</span>
+          <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
+          <span className="text-white/20 text-[9px]">·</span>
+          <span className="text-[9px] font-mono text-white/40 tracking-widest">SOFTWARE HOUSE</span>
         </div>
         <Link
           href="/projects"
-          className="text-[9px] font-mono text-white/20 hover:text-[#CAFF00] tracking-widest transition-colors uppercase"
+          className="text-[9px] font-mono text-white/45 hover:text-[#CAFF00] tracking-widest transition-colors uppercase"
         >
           View Work →
         </Link>

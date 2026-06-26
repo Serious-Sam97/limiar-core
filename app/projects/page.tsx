@@ -22,14 +22,14 @@ export default function ProjectsPage() {
           <Link href="/">
             <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center">LC</span>
           </Link>
-          <span className="text-[10px] font-mono tracking-[0.3em] text-white/25 uppercase">Limiar Core</span>
-          <span className="text-white/10">·</span>
-          <span className="text-[9px] font-mono tracking-[0.2em] text-white/15 border border-white/10 px-1.5 py-0.5">Software House</span>
+          <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
+          <span className="text-white/20">·</span>
+          <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           {[["Index", "/"], ["Work", "/projects"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
-              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Work" ? "text-[#CAFF00]" : "text-white/30 hover:text-white"}`}
+              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Work" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>
           ))}
         </nav>
@@ -51,9 +51,9 @@ export default function ProjectsPage() {
 
         {/* Eyebrow */}
         <div className="flex items-center gap-4 mb-4 relative z-10">
-          <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">03</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">03</span>
           <div className="h-px flex-1 bg-white/[0.06]" />
-          <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">SELECTED WORK</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">SELECTED WORK</span>
         </div>
 
         {/* "WORK" — two-tone outline + solid */}
@@ -88,7 +88,7 @@ export default function ProjectsPage() {
       <section className="flex-1 flex flex-col px-8 md:px-14">
 
         {/* Column headers */}
-        <div className="grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/20 uppercase mt-6">
+        <div className="grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-6">
           <span className="col-span-1">ID</span>
           <span className="col-span-5">Project</span>
           <span className="col-span-3">Category</span>
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
         {/* Redacted skeleton rows */}
         {slots.map(({ id, w }, i) => (
           <div key={i} className="grid grid-cols-12 gap-4 py-6 border-b border-white/[0.03] items-center group">
-            <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/20 tracking-widest">{id}</span>
+            <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{id}</span>
             <div className="col-span-5 flex items-center gap-2">
               {/* Redacted bar */}
               <div className="h-3 bg-white/[0.07]" style={{ width: w }} />
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
               <div className="h-2.5 bg-white/[0.04] w-10" />
             </div>
             <div className="col-span-1 flex justify-end">
-              <span className="text-[8px] font-mono tracking-widest text-white/15 border border-white/[0.08] px-1.5 py-0.5">
+              <span className="text-[8px] font-mono tracking-widest text-white/45 border border-white/[0.08] px-1.5 py-0.5">
                 VACANT
               </span>
             </div>
@@ -140,8 +140,8 @@ export default function ProjectsPage() {
             </p>
 
             <div className="flex flex-col items-center gap-2">
-              <p className="text-white/25 text-sm">The list is empty. Projects ship here as they go live.</p>
-              <p className="text-white/15 text-xs font-mono tracking-widest">
+              <p className="text-white/65 text-sm">The list is empty. Projects ship here as they go live.</p>
+              <p className="text-white/40 text-xs font-mono tracking-widest">
                 PIPELINE: OPEN &nbsp;·&nbsp; ENTRIES: 0 &nbsp;·&nbsp; AWAITING FIRST COMMIT
               </p>
             </div>
@@ -158,15 +158,15 @@ export default function ProjectsPage() {
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-white/[0.06] px-8 md:px-14 py-4 flex items-center justify-between shrink-0">
-        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/20 hover:text-white/60 tracking-widest uppercase transition-colors">
+        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           Back to Index
         </Link>
-        <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/15">
+        <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/40">
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           ALL SYSTEMS GO
         </div>
-        <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 LIMIAR CORE</span>
+        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
       </footer>
     </main>
   );

@@ -21,14 +21,14 @@ export default function ContactPage() {
           <Link href="/">
             <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center">LC</span>
           </Link>
-          <span className="text-[10px] font-mono tracking-[0.3em] text-white/25 uppercase">Limiar Core</span>
-          <span className="text-white/10">·</span>
-          <span className="text-[9px] font-mono tracking-[0.2em] text-white/15 border border-white/10 px-1.5 py-0.5">Software House</span>
+          <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
+          <span className="text-white/20">·</span>
+          <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           {[["Index", "/"], ["Work", "/projects"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
-              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Contact" ? "text-[#CAFF00]" : "text-white/30 hover:text-white"}`}
+              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Contact" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>
           ))}
         </nav>
@@ -54,9 +54,9 @@ export default function ContactPage() {
 
           {/* Eyebrow */}
           <div className="flex items-center gap-4 mb-1 relative z-10">
-            <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">06</span>
+            <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">06</span>
             <div className="h-px w-16 bg-white/[0.06]" />
-            <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">GET IN TOUCH</span>
+            <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">GET IN TOUCH</span>
           </div>
 
           {/* Title */}
@@ -92,7 +92,7 @@ export default function ContactPage() {
 
               {/* Email */}
               <div>
-                <p className="text-[9px] font-mono text-white/20 tracking-[0.3em] uppercase mb-2">Direct line</p>
+                <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-2">Direct line</p>
                 <button
                   onClick={copy}
                   className="group flex items-center gap-3 text-left"
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <span className="text-[#F0EEE9] font-mono text-sm group-hover:text-[#CAFF00] transition-colors">
                     hello@limiarcore.dev
                   </span>
-                  <span className="text-[8px] font-mono tracking-widest text-white/20 border border-white/[0.08] px-1.5 py-0.5 group-hover:border-[#CAFF00]/30 group-hover:text-[#CAFF00]/50 transition-colors">
+                  <span className="text-[8px] font-mono tracking-widest text-white/45 border border-white/[0.08] px-1.5 py-0.5 group-hover:border-[#CAFF00]/30 group-hover:text-[#CAFF00]/50 transition-colors">
                     {copied ? "COPIED ✓" : "COPY"}
                   </span>
                 </button>
@@ -108,7 +108,7 @@ export default function ContactPage() {
 
               {/* Status */}
               <div>
-                <p className="text-[9px] font-mono text-white/20 tracking-[0.3em] uppercase mb-2">Availability</p>
+                <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-2">Availability</p>
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
                   <span className="text-sm text-white/60 font-mono">Open for new projects</span>
@@ -117,13 +117,13 @@ export default function ContactPage() {
 
               {/* Location */}
               <div>
-                <p className="text-[9px] font-mono text-white/20 tracking-[0.3em] uppercase mb-2">Base</p>
+                <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-2">Base</p>
                 <p className="text-sm text-white/60 font-mono">Brazil — Remote-first</p>
               </div>
 
               {/* Response time */}
               <div>
-                <p className="text-[9px] font-mono text-white/20 tracking-[0.3em] uppercase mb-2">Response time</p>
+                <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-2">Response time</p>
                 <p className="text-sm text-white/60 font-mono">Within 24h</p>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function ContactPage() {
             {/* Bottom tagline */}
             <div>
               <div className="w-6 h-px bg-[#CAFF00] mb-3" />
-              <p className="text-white/30 text-sm leading-snug">
+              <p className="text-white/65 text-sm leading-snug">
                 No discovery calls for the sake of it.<br />
                 Come with a real problem.
               </p>
@@ -143,8 +143,8 @@ export default function ContactPage() {
         <div className="flex flex-col px-10 py-8 justify-center gap-6">
 
           <div>
-            <p className="text-[9px] font-mono text-white/20 tracking-[0.3em] uppercase mb-1">Send a brief</p>
-            <p className="text-white/30 text-xs">Tell us what you're building. We'll respond with honesty.</p>
+            <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-1">Send a brief</p>
+            <p className="text-white/60 text-xs">Tell us what you're building. We'll respond with honesty.</p>
           </div>
 
           <form
@@ -156,39 +156,39 @@ export default function ContactPage() {
             {/* Name + Company row */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex flex-col gap-1.5">
-                <label className="text-[9px] font-mono text-white/25 tracking-[0.25em] uppercase">Name</label>
+                <label className="text-[9px] font-mono text-white/50 tracking-[0.25em] uppercase">Name</label>
                 <input
                   type="text"
                   name="name"
                   placeholder="Your name"
-                  className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/20 focus:outline-none focus:border-[#CAFF00]/40 transition-colors"
+                  className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/35 focus:outline-none focus:border-[#CAFF00]/40 transition-colors"
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-[9px] font-mono text-white/25 tracking-[0.25em] uppercase">Company</label>
+                <label className="text-[9px] font-mono text-white/50 tracking-[0.25em] uppercase">Company</label>
                 <input
                   type="text"
                   name="company"
                   placeholder="Optional"
-                  className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/20 focus:outline-none focus:border-[#CAFF00]/40 transition-colors"
+                  className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/35 focus:outline-none focus:border-[#CAFF00]/40 transition-colors"
                 />
               </div>
             </div>
 
             {/* Email */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-[9px] font-mono text-white/25 tracking-[0.25em] uppercase">Email</label>
+              <label className="text-[9px] font-mono text-white/50 tracking-[0.25em] uppercase">Email</label>
               <input
                 type="email"
                 name="email"
                 placeholder="your@email.com"
-                className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/20 focus:outline-none focus:border-[#CAFF00]/40 transition-colors"
+                className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/35 focus:outline-none focus:border-[#CAFF00]/40 transition-colors"
               />
             </div>
 
             {/* Service */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-[9px] font-mono text-white/25 tracking-[0.25em] uppercase">What do you need?</label>
+              <label className="text-[9px] font-mono text-white/50 tracking-[0.25em] uppercase">What do you need?</label>
               <select
                 name="service"
                 className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono focus:outline-none focus:border-[#CAFF00]/40 transition-colors appearance-none"
@@ -206,12 +206,12 @@ export default function ContactPage() {
 
             {/* Message */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-[9px] font-mono text-white/25 tracking-[0.25em] uppercase">The brief</label>
+              <label className="text-[9px] font-mono text-white/50 tracking-[0.25em] uppercase">The brief</label>
               <textarea
                 name="body"
                 rows={4}
                 placeholder="What are you building? What's the problem? What does done look like?"
-                className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/20 focus:outline-none focus:border-[#CAFF00]/40 transition-colors resize-none"
+                className="bg-white/[0.04] border border-white/[0.08] px-3 py-2.5 text-sm text-white/80 font-mono placeholder:text-white/35 focus:outline-none focus:border-[#CAFF00]/40 transition-colors resize-none"
               />
             </div>
 
@@ -229,15 +229,15 @@ export default function ContactPage() {
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-white/[0.06] px-8 md:px-14 py-3 flex items-center justify-between shrink-0">
-        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/20 hover:text-white/60 tracking-widest uppercase transition-colors">
+        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           Back to Index
         </Link>
-        <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/15">
+        <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/40">
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           ALL SYSTEMS GO
         </div>
-        <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 LIMIAR CORE</span>
+        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
       </footer>
     </main>
   );

@@ -27,14 +27,14 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="w-5 h-5 acid-bg text-[9px] font-black flex items-center justify-center">SH</span>
-          <span className="text-[11px] tracking-[0.25em] text-white/50 group-hover:text-white/80 transition-colors font-mono uppercase">Software House</span>
+          <span className="text-[11px] tracking-[0.25em] text-white/70 group-hover:text-white transition-colors font-mono uppercase">Software House</span>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {links.map(({ href, label }) => (
             <Link key={href} href={href}
-              className={`text-[11px] tracking-widest transition-colors relative ${pathname === href ? "acid" : "text-white/40 hover:text-white"}`}
+              className={`text-[11px] tracking-widest transition-colors relative ${pathname === href ? "acid" : "text-white/60 hover:text-white"}`}
             >
               {label}
               {pathname === href && <span className="absolute -bottom-[1px] left-0 right-0 h-px bg-[#CAFF00]" />}
@@ -43,7 +43,7 @@ export default function Navbar() {
         </div>
 
         {/* Status pill */}
-        <div className="hidden md:flex items-center gap-1.5 text-[10px] font-mono text-white/30">
+        <div className="hidden md:flex items-center gap-1.5 text-[10px] font-mono text-white/50">
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           Available for projects
         </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="md:hidden border-b border-white/[0.06] bg-[#080808] px-6 py-4 flex flex-col gap-4">
           {links.map(({ href, label }) => (
             <Link key={href} href={href} onClick={() => setOpen(false)}
-              className="text-sm tracking-widest text-white/50 hover:text-white transition-colors"
+              className="text-sm tracking-widest text-white/70 hover:text-white transition-colors"
             >{label}</Link>
           ))}
         </div>

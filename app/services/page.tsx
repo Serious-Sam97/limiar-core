@@ -57,14 +57,14 @@ export default function ServicesPage() {
           <Link href="/">
             <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center">LC</span>
           </Link>
-          <span className="text-[10px] font-mono tracking-[0.3em] text-white/25 uppercase">Limiar Core</span>
-          <span className="text-white/10">·</span>
-          <span className="text-[9px] font-mono tracking-[0.2em] text-white/15 border border-white/10 px-1.5 py-0.5">Software House</span>
+          <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
+          <span className="text-white/20">·</span>
+          <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           {[["Index", "/"], ["Work", "/projects"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
-              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Services" ? "text-[#CAFF00]" : "text-white/30 hover:text-white"}`}
+              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "Services" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>
           ))}
         </nav>
@@ -84,9 +84,9 @@ export default function ServicesPage() {
         </span>
 
         <div className="flex items-center gap-4 mb-1 relative z-10">
-          <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">05</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">05</span>
           <div className="h-px flex-1 bg-white/[0.06]" />
-          <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">WHAT WE DO</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">WHAT WE DO</span>
         </div>
 
         <div className="relative z-10 flex items-end gap-0 leading-none -mb-2">
@@ -119,7 +119,7 @@ export default function ServicesPage() {
       {/* ── SERVICE ROWS ── */}
       <section className="flex-1 flex flex-col px-8 md:px-14 min-h-0">
 
-        <div className="grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/20 uppercase mt-2 shrink-0">
+        <div className="grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-2 shrink-0">
           <span className="col-span-1">ID</span>
           <span className="col-span-3">Service</span>
           <span className="col-span-5">Description</span>
@@ -133,7 +133,7 @@ export default function ServicesPage() {
               key={id}
               className="flex-1 grid grid-cols-12 gap-6 border-b border-white/[0.04] items-center group hover:bg-white/[0.012] transition-colors"
             >
-              <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/25 tracking-widest">{id}</span>
+              <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{id}</span>
 
               <div className="col-span-3">
                 <p
@@ -145,14 +145,14 @@ export default function ServicesPage() {
               </div>
 
               <div className="col-span-5">
-                <p className="text-white/40 text-sm leading-relaxed">{description}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{description}</p>
               </div>
 
               <div className="col-span-2 flex flex-wrap gap-1">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[8px] font-mono tracking-widest text-white/25 border border-white/[0.08] px-1.5 py-0.5 uppercase"
+                    className="text-[8px] font-mono tracking-widest text-white/45 border border-white/[0.08] px-1.5 py-0.5 uppercase"
                   >
                     {tag}
                   </span>
@@ -160,7 +160,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="col-span-1 text-right">
-                <span className="text-[8px] font-mono text-white/20 tracking-widest leading-tight block">{deliverable}</span>
+                <span className="text-[8px] font-mono text-white/45 tracking-widest leading-tight block">{deliverable}</span>
               </div>
             </div>
           ))}
@@ -169,12 +169,12 @@ export default function ServicesPage() {
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-white/[0.06] px-8 md:px-14 py-3 flex items-center justify-between shrink-0">
-        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/20 hover:text-white/60 tracking-widest uppercase transition-colors">
+        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           Back to Index
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-[9px] font-mono text-white/15 tracking-widest">TAILORED TO YOUR PROBLEM</span>
+          <span className="text-[9px] font-mono text-white/40 tracking-widest">TAILORED TO YOUR PROBLEM</span>
           <Link
             href="/contact"
             className="flex items-center gap-2 px-4 py-1.5 bg-[#CAFF00] text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"
@@ -182,7 +182,7 @@ export default function ServicesPage() {
             Start a project →
           </Link>
         </div>
-        <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 LIMIAR CORE</span>
+        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
       </footer>
     </main>
   );

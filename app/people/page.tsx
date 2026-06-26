@@ -69,14 +69,14 @@ export default function PeoplePage() {
           <Link href="/">
             <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center">LC</span>
           </Link>
-          <span className="text-[10px] font-mono tracking-[0.3em] text-white/25 uppercase">Limiar Core</span>
-          <span className="text-white/10">·</span>
-          <span className="text-[9px] font-mono tracking-[0.2em] text-white/15 border border-white/10 px-1.5 py-0.5">Software House</span>
+          <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
+          <span className="text-white/20">·</span>
+          <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           {[["Index", "/"], ["Work", "/projects"], ["People", "/people"], ["Services", "/services"], ["Contact", "/contact"]].map(([label, href]) => (
             <Link key={label} href={href}
-              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "People" ? "text-[#CAFF00]" : "text-white/30 hover:text-white"}`}
+              className={`text-[10px] tracking-widest font-mono transition-colors ${label === "People" ? "text-[#CAFF00]" : "text-white/55 hover:text-white"}`}
             >{label}</Link>
           ))}
         </nav>
@@ -99,9 +99,9 @@ export default function PeoplePage() {
 
         {/* Eyebrow */}
         <div className="flex items-center gap-4 mb-1 relative z-10">
-          <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">04</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">04</span>
           <div className="h-px flex-1 bg-white/[0.06]" />
-          <span className="text-[9px] font-mono text-white/20 tracking-[0.4em]">THE PEOPLE</span>
+          <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">THE PEOPLE</span>
         </div>
 
         {/* "PEOPLE" — split PE + OPLE */}
@@ -136,7 +136,7 @@ export default function PeoplePage() {
       <section className="flex-1 flex flex-col px-8 md:px-14 min-h-0">
 
         {/* Column headers */}
-        <div className="grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/20 uppercase mt-2 shrink-0">
+        <div className="grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-2 shrink-0">
           <span className="col-span-1">ID</span>
           <span className="col-span-2">Portrait</span>
           <span className="col-span-3">Identity</span>
@@ -152,7 +152,7 @@ export default function PeoplePage() {
               className="flex-1 grid grid-cols-12 gap-6 border-b border-white/[0.04] items-center group hover:bg-white/[0.012] transition-colors px-0"
             >
               {/* ID */}
-              <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/25 tracking-widest">{id}</span>
+              <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{id}</span>
 
               {/* Portrait */}
               <div className="col-span-2 flex items-center">
@@ -181,7 +181,7 @@ export default function PeoplePage() {
                       <div className="absolute top-1/2 left-0 right-0 h-px bg-[#CAFF00]/10" />
                       <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#CAFF00]/10" />
                       <span
-                        className="relative font-black text-white/25 z-10"
+                        className="relative font-black text-white/50 z-10"
                         style={{ fontSize: "clamp(0.7rem, 1.1vw, 1.1rem)", fontFamily: "var(--font-geist-sans)" }}
                       >
                         {initials}
@@ -240,13 +240,13 @@ export default function PeoplePage() {
                       </a>
                     </div>
                   </div>
-                  <p className="text-[9px] font-mono text-[#CAFF00]/60 tracking-[0.2em] uppercase">{role}</p>
+                  <p className="text-[9px] font-mono text-[#CAFF00]/80 tracking-[0.2em] uppercase">{role}</p>
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[8px] font-mono tracking-widest text-white/25 border border-white/[0.08] px-1.5 py-0.5 uppercase"
+                      className="text-[8px] font-mono tracking-widest text-white/45 border border-white/[0.08] px-1.5 py-0.5 uppercase"
                     >
                       {tag}
                     </span>
@@ -256,12 +256,12 @@ export default function PeoplePage() {
 
               {/* Bio */}
               <div className="col-span-5">
-                <p className="text-white/40 text-sm leading-relaxed">{bio}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{bio}</p>
               </div>
 
               {/* Since */}
               <div className="col-span-1 text-right">
-                <span className="text-[9px] font-mono text-white/20 tracking-widest">{since}</span>
+                <span className="text-[9px] font-mono text-white/50 tracking-widest">{since}</span>
               </div>
             </div>
           ))}
@@ -270,12 +270,12 @@ export default function PeoplePage() {
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-white/[0.06] px-8 md:px-14 py-3 flex items-center justify-between shrink-0">
-        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/20 hover:text-white/60 tracking-widest uppercase transition-colors">
+        <Link href="/" className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           Back to Index
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-[9px] font-mono text-white/15 tracking-widest">CAPACITY: SELECTIVE · REMOTE-FIRST</span>
+          <span className="text-[9px] font-mono text-white/40 tracking-widest">CAPACITY: SELECTIVE · REMOTE-FIRST</span>
           <a
             href="mailto:hello@limiarcore.dev"
             className="flex items-center gap-2 px-4 py-1.5 bg-[#CAFF00] text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"
@@ -283,7 +283,7 @@ export default function PeoplePage() {
             Work with us →
           </a>
         </div>
-        <span className="text-[9px] font-mono text-white/15 tracking-widest">© 2025 LIMIAR CORE</span>
+        <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2025 LIMIAR CORE</span>
       </footer>
     </main>
   );
