@@ -15,19 +15,19 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   const dict = await getDictionary(lang);
 
   return (
-    <main className="h-screen bg-[#080808] text-[#F0EEE9] flex flex-col overflow-hidden">
+    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] flex flex-col md:overflow-hidden">
 
       <SiteHeader lang={lang} dict={dict} active="contact" />
 
       <ContactClient c={dict.contact} title={dict.titles.contact} />
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-white/[0.06] px-8 md:px-14 py-3 flex items-center justify-between shrink-0">
+      <footer className="border-t border-white/[0.06] px-6 md:px-14 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 shrink-0">
         <Link href={`/${lang}`} className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {dict.common.backToIndex}
         </Link>
-        <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/40">
+        <div className="hidden sm:flex items-center gap-1.5 text-[9px] font-mono text-white/40">
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           {dict.common.allSystemsGo}
         </div>

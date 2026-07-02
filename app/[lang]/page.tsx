@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import TrustedBy from "@/components/TrustedBy";
 import LangSwitcher from "@/components/LangSwitcher";
+import MobileNav from "@/components/MobileNav";
 import { clients } from "@/lib/clients";
 import { isLocale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
@@ -21,13 +22,13 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const dict = await getDictionary(lang);
 
   return (
-    <main className="h-screen bg-[#080808] text-[#F0EEE9] overflow-hidden flex flex-col">
+    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] md:overflow-hidden flex flex-col">
 
       {/* ── SINGLE VIEWPORT — split layout ── */}
-      <div className="flex-1 grid" style={{ gridTemplateColumns: "1fr clamp(280px, 22vw, 420px)" }}>
+      <div className="flex-1 grid grid-cols-1 md:grid-cols-[1fr_clamp(280px,22vw,420px)]">
 
         {/* LEFT — identity */}
-        <div className="flex flex-col p-8 md:p-12 border-r border-white/[0.06] relative overflow-hidden">
+        <div className="flex flex-col p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/[0.06] relative overflow-hidden min-h-[70vh] md:min-h-0">
 
           {/* Huge ghost letters — decorative */}
           <span
@@ -38,13 +39,16 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </span>
 
           {/* Top: logo mark */}
-          <div className="flex items-center gap-2.5 relative z-10">
-            <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center shrink-0">LC</span>
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
-              <span className="text-white/20 text-[10px]">·</span>
-              <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 uppercase border border-white/15 px-1.5 py-0.5">Software House</span>
+          <div className="flex items-center justify-between gap-2.5 relative z-10">
+            <div className="flex items-center gap-2.5">
+              <span className="w-6 h-6 bg-[#CAFF00] text-black text-[9px] font-black flex items-center justify-center shrink-0">LC</span>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
+                <span className="hidden sm:inline text-white/20 text-[10px]">·</span>
+                <span className="hidden sm:inline text-[9px] font-mono tracking-[0.2em] text-white/40 uppercase border border-white/15 px-1.5 py-0.5">Software House</span>
+              </div>
             </div>
+            <MobileNav lang={lang} dict={dict} active="index" />
           </div>
 
           {/* Center: title */}
@@ -96,7 +100,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <Link
               key={key}
               href={`/${lang}${seg}`}
-              className="flex-1 border-b border-white/[0.06] flex items-center justify-between px-7 group hover:bg-white/[0.025] transition-colors"
+              className="hidden md:flex flex-1 border-b border-white/[0.06] items-center justify-between px-7 group hover:bg-white/[0.025] transition-colors"
             >
               <div className="flex items-baseline gap-4">
                 <span className="text-[9px] font-mono text-white/45">{n}</span>
@@ -145,11 +149,11 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       </div>
 
       {/* ── THIN BOTTOM BAR ── */}
-      <div className="border-t border-white/[0.06] px-8 md:px-12 py-3 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-6">
+      <div className="border-t border-white/[0.06] px-8 md:px-12 py-3 flex items-center justify-between gap-3 shrink-0">
+        <div className="flex items-center gap-3 sm:gap-6">
           <span className="text-[9px] font-mono text-white/40 tracking-widest">© 2026 LIMIAR CORE</span>
-          <span className="text-white/20 text-[9px]">·</span>
-          <span className="text-[9px] font-mono text-white/40 tracking-widest">SOFTWARE HOUSE</span>
+          <span className="hidden sm:inline text-white/20 text-[9px]">·</span>
+          <span className="hidden sm:inline text-[9px] font-mono text-white/40 tracking-widest">SOFTWARE HOUSE</span>
         </div>
         <Link
           href={`/${lang}/projects`}

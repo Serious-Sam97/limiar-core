@@ -84,8 +84,80 @@ export default function ProjectRows({
           <div
             key={id}
             style={accentVars}
-            className="grid grid-cols-12 gap-4 py-6 border-b border-white/[0.03] items-center group hover:bg-white/[0.012] transition-colors"
+            className="border-b border-white/[0.03] group hover:bg-white/[0.012] transition-colors"
           >
+          {/* ── MOBILE CARD ── */}
+          <div className="md:hidden flex flex-col gap-3 py-5">
+            <div className="flex items-start gap-4">
+              <button
+                type="button"
+                onClick={() => open(p)}
+                aria-label={`Open ${name} details`}
+                className="relative w-16 h-16 shrink-0 border border-white/[0.1] bg-white/[0.03] flex items-center justify-center overflow-hidden cursor-pointer"
+              >
+                {icon ? (
+                  <Image src={icon} alt={`${name} icon`} fill className="object-cover" />
+                ) : (
+                  <span className="font-black text-white/40 text-xl" style={{ fontFamily: "var(--font-geist-sans)" }}>
+                    {name.charAt(0)}
+                  </span>
+                )}
+              </button>
+
+              <div className="flex-1 min-w-0 flex flex-col gap-1">
+                <div className="flex items-start justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={() => open(p)}
+                    className="text-left text-xl font-black tracking-tight leading-none text-[#F0EEE9] cursor-pointer"
+                  >
+                    {name}
+                  </button>
+                  <span className="text-[9px] font-mono tracking-widest opacity-50 shrink-0 mt-0.5" style={{ color: accent }}>
+                    {id}
+                  </span>
+                </div>
+                <span className="text-white/55 text-xs leading-snug">{blurb}</span>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2 flex-wrap min-w-0">
+                <span className="text-[10px] font-mono tracking-widest text-white/50 uppercase">{category}</span>
+                <span className="text-white/20 text-[9px]">·</span>
+                <span className="text-[10px] font-mono tracking-widest text-white/50">{year}</span>
+                <span
+                  className="text-[8px] font-mono tracking-widest border px-1.5 py-0.5"
+                  style={
+                    isLive
+                      ? { color: accent, borderColor: `${accent}66` }
+                      : { color: "rgba(240,238,233,0.55)", borderColor: "rgba(255,255,255,0.12)" }
+                  }
+                >
+                  {statusText(status)}
+                </span>
+              </div>
+              {url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-black text-[9px] font-black tracking-widest uppercase shrink-0"
+                  style={{ background: accent }}
+                >
+                  {labels.visit}
+                  <span>→</span>
+                </a>
+              ) : (
+                <span className="inline-flex items-center px-3 py-1.5 border border-white/[0.12] text-white/40 text-[9px] font-black tracking-widest uppercase shrink-0">
+                  {labels.soon}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* ── DESKTOP ROW ── */}
+          <div className="hidden md:grid grid-cols-12 gap-4 py-6 items-center">
             <span className="col-span-1 text-[9px] font-mono tracking-widest opacity-50" style={{ color: accent }}>
               {id}
             </span>
@@ -163,6 +235,7 @@ export default function ProjectRows({
                 </span>
               )}
             </div>
+          </div>
           </div>
         );
       })}

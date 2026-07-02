@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LangSwitcher from "@/components/LangSwitcher";
+import MobileNav from "@/components/MobileNav";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
 
@@ -27,7 +28,7 @@ export default function SiteHeader({
   accent?: string;
 }) {
   return (
-    <header className="border-b border-white/[0.06] px-8 md:px-14 py-4 flex items-center justify-between shrink-0">
+    <header className="border-b border-white/[0.06] px-6 md:px-14 py-4 flex items-center justify-between shrink-0">
       <div className="flex items-center gap-3">
         <Link href={`/${lang}`}>
           <span
@@ -38,8 +39,8 @@ export default function SiteHeader({
           </span>
         </Link>
         <span className="text-[10px] font-mono tracking-[0.3em] text-white/55 uppercase">Limiar Core</span>
-        <span className="text-white/20">·</span>
-        <span className="text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
+        <span className="hidden sm:inline text-white/20">·</span>
+        <span className="hidden sm:inline text-[9px] font-mono tracking-[0.2em] text-white/40 border border-white/15 px-1.5 py-0.5">Software House</span>
       </div>
 
       <nav className="hidden md:flex items-center gap-8">
@@ -66,6 +67,7 @@ export default function SiteHeader({
           <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: accent }} />
           {dict.common.openForWork}
         </span>
+        <MobileNav lang={lang} dict={dict} active={active} accent={accent} />
       </div>
     </header>
   );

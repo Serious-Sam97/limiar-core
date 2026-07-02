@@ -36,7 +36,7 @@ export default async function ClientsPage({ params }: { params: Promise<{ lang: 
       <SiteHeader lang={lang} dict={dict} active="clients" />
 
       {/* ── MASSIVE TITLE ── */}
-      <section className="px-8 md:px-14 pt-10 pb-0 border-b border-white/[0.06] relative overflow-hidden">
+      <section className="px-8 md:px-14 pt-10 pb-3 md:pb-0 border-b border-white/[0.06] relative overflow-hidden">
         <span
           className="absolute top-0 right-0 leading-none font-black text-white/[0.015] select-none pointer-events-none"
           style={{ fontSize: "38vw", lineHeight: 0.8, fontFamily: "var(--font-geist-sans)" }}
@@ -50,7 +50,7 @@ export default async function ClientsPage({ params }: { params: Promise<{ lang: 
           <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">{dict.clients.eyebrow}</span>
         </div>
 
-        <div className="relative z-10 flex items-end gap-0 leading-none -mb-2">
+        <div className="relative z-10 flex items-end gap-0 leading-none mb-0 md:-mb-2">
           <h1
             className="font-black tracking-tighter wipe-in"
             style={{
@@ -82,7 +82,7 @@ export default async function ClientsPage({ params }: { params: Promise<{ lang: 
 
         <TrustedBy clients={clients} label={dict.common.trustedBy} />
 
-        <div className="grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-4 items-center">
+        <div className="hidden md:grid grid-cols-12 gap-4 py-3 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-4 items-center">
           <span className="col-span-1">{dict.cols.id}</span>
           <span className="col-span-2">{dict.cols.logo}</span>
           <span className="col-span-3">{dict.cols.client}</span>
@@ -98,12 +98,12 @@ export default async function ClientsPage({ params }: { params: Promise<{ lang: 
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-white/[0.06] px-8 md:px-14 py-4 flex items-center justify-between shrink-0">
+      <footer className="border-t border-white/[0.06] px-6 md:px-14 py-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 shrink-0">
         <Link href={`/${lang}`} className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {dict.common.backToIndex}
         </Link>
-        <div className="flex items-center gap-1.5 text-[9px] font-mono text-white/40">
+        <div className="hidden sm:flex items-center gap-1.5 text-[9px] font-mono text-white/40">
           <span className="w-1.5 h-1.5 rounded-full bg-[#CAFF00] animate-pulse" />
           {dict.clients.footer}
         </div>

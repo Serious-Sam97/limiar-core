@@ -75,12 +75,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
   const dict = await getDictionary(lang);
 
   return (
-    <main className="h-screen bg-[#080808] text-[#F0EEE9] flex flex-col overflow-hidden">
+    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] flex flex-col md:overflow-hidden">
 
       <SiteHeader lang={lang} dict={dict} active="services" />
 
       {/* ── TITLE SECTION ── */}
-      <section className="px-8 md:px-14 pt-2 pb-0 border-b border-white/[0.06] relative overflow-hidden">
+      <section className="px-8 md:px-14 pt-2 pb-3 md:pb-0 border-b border-white/[0.06] relative overflow-hidden">
         <span
           className="absolute top-0 right-0 leading-none font-black text-white/[0.015] select-none pointer-events-none"
           style={{ fontSize: "38vw", lineHeight: 0.8, fontFamily: "var(--font-geist-sans)" }}
@@ -94,7 +94,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">{dict.services.eyebrow}</span>
         </div>
 
-        <div className="relative z-10 flex items-end gap-0 leading-none -mb-2">
+        <div className="relative z-10 flex items-end gap-0 leading-none mb-0 md:-mb-2">
           <h1
             className="font-black tracking-tighter wipe-in"
             style={{
@@ -124,7 +124,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
       {/* ── SERVICE ROWS ── */}
       <section className="flex-1 flex flex-col px-8 md:px-14 min-h-0">
 
-        <div className="grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-2 shrink-0">
+        <div className="hidden md:grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-2 shrink-0">
           <span className="col-span-1">{dict.cols.id}</span>
           <span className="col-span-3">{dict.cols.service}</span>
           <span className="col-span-5">{dict.cols.description}</span>
@@ -136,14 +136,14 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           {services.map((s) => (
             <div
               key={s.id}
-              className="flex-1 grid grid-cols-12 gap-6 border-b border-white/[0.04] items-center group hover:bg-white/[0.012] transition-colors"
+              className="flex flex-col gap-2.5 py-5 md:py-0 md:grid md:grid-cols-12 md:gap-6 md:flex-1 border-b border-white/[0.04] items-start md:items-center group hover:bg-white/[0.012] transition-colors"
             >
               <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{s.id}</span>
 
               <div className="col-span-3">
                 <p
                   className="font-black tracking-tight leading-none text-[#F0EEE9] mb-1 group-hover:text-[#CAFF00] transition-colors"
-                  style={{ fontSize: "clamp(0.85rem, 1.3vw, 1.4rem)", fontFamily: "var(--font-geist-sans)" }}
+                  style={{ fontSize: "clamp(1.15rem, 1.3vw, 1.4rem)", fontFamily: "var(--font-geist-sans)" }}
                 >
                   {t(s.name, lang)}
                 </p>
@@ -164,7 +164,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
                 ))}
               </div>
 
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 md:text-right">
                 <span className="text-[8px] font-mono text-white/45 tracking-widest leading-tight block">{t(s.deliverable, lang)}</span>
               </div>
             </div>
@@ -173,13 +173,13 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-white/[0.06] px-8 md:px-14 py-3 flex items-center justify-between shrink-0">
+      <footer className="border-t border-white/[0.06] px-6 md:px-14 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 shrink-0">
         <Link href={`/${lang}`} className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {dict.common.backToIndex}
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-[9px] font-mono text-white/40 tracking-widest">{dict.services.footerNote}</span>
+          <span className="hidden sm:inline text-[9px] font-mono text-white/40 tracking-widest">{dict.services.footerNote}</span>
           <Link
             href={`/${lang}/contact`}
             className="flex items-center gap-2 px-4 py-1.5 bg-[#CAFF00] text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"

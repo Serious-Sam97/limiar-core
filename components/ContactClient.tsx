@@ -19,10 +19,10 @@ export default function ContactClient({
   };
 
   return (
-    <div className="flex-1 grid min-h-0" style={{ gridTemplateColumns: "1fr clamp(300px, 36vw, 560px)" }}>
+    <div className="flex-1 grid min-h-0 grid-cols-1 md:grid-cols-[1fr_clamp(300px,36vw,560px)]">
 
       {/* LEFT — identity + title */}
-      <div className="flex flex-col px-8 md:px-14 py-8 border-r border-white/[0.06] relative overflow-hidden">
+      <div className="flex flex-col px-8 md:px-14 py-8 border-b md:border-b-0 md:border-r border-white/[0.06] relative overflow-hidden">
 
         <span
           className="absolute bottom-0 left-0 leading-none font-black text-white/[0.02] select-none pointer-events-none"
@@ -112,7 +112,7 @@ export default function ContactClient({
       </div>
 
       {/* RIGHT — brief form */}
-      <div className="flex flex-col px-10 py-8 justify-center gap-6">
+      <div className="flex flex-col px-8 md:px-10 py-8 justify-center gap-6">
 
         <div>
           <p className="text-[9px] font-mono text-white/45 tracking-[0.3em] uppercase mb-1">{c.sendBriefTitle}</p>

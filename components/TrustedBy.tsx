@@ -14,7 +14,7 @@ export default function TrustedBy({
   label?: string;
 }) {
   return (
-    <div className="flex items-center gap-x-8 gap-y-3 flex-wrap py-5 border-b border-white/[0.06]">
+    <div className="flex flex-col md:flex-row md:items-center gap-y-4 gap-x-8 md:flex-wrap py-5 border-b border-white/[0.06]">
       <span className="text-[9px] font-mono tracking-[0.4em] uppercase shrink-0" style={{ color: accent }}>
         {label}
       </span>

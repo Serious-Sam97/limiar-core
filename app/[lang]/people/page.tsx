@@ -97,12 +97,12 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
   const dict = await getDictionary(lang);
 
   return (
-    <main className="h-screen bg-[#080808] text-[#F0EEE9] flex flex-col overflow-hidden">
+    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] flex flex-col md:overflow-hidden">
 
       <SiteHeader lang={lang} dict={dict} active="people" />
 
       {/* ── TITLE SECTION ── */}
-      <section className="px-8 md:px-14 pt-2 pb-0 border-b border-white/[0.06] relative overflow-hidden">
+      <section className="px-8 md:px-14 pt-2 pb-3 md:pb-0 border-b border-white/[0.06] relative overflow-hidden">
         <span
           className="absolute top-0 right-0 leading-none font-black text-white/[0.015] select-none pointer-events-none"
           style={{ fontSize: "38vw", lineHeight: 0.8, fontFamily: "var(--font-geist-sans)" }}
@@ -116,7 +116,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
           <span className="text-[9px] font-mono text-white/45 tracking-[0.4em]">{dict.people.eyebrow}</span>
         </div>
 
-        <div className="relative z-10 flex items-end gap-0 leading-none -mb-2">
+        <div className="relative z-10 flex items-end gap-0 leading-none mb-0 md:-mb-2">
           <h1
             className="font-black tracking-tighter wipe-in"
             style={{
@@ -146,7 +146,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
       {/* ── TEAM ENTRIES ── */}
       <section className="flex-1 flex flex-col px-8 md:px-14 min-h-0">
 
-        <div className="grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-2 shrink-0">
+        <div className="hidden md:grid grid-cols-12 gap-6 py-1.5 border-b border-white/[0.06] text-[9px] font-mono tracking-[0.3em] text-white/45 uppercase mt-2 shrink-0">
           <span className="col-span-1">{dict.cols.id}</span>
           <span className="col-span-2">{dict.cols.portrait}</span>
           <span className="col-span-3">{dict.cols.identity}</span>
@@ -158,7 +158,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
           {team.map(({ id, name, role, bio, tags, since, photo, initials, linkedin, github }) => (
             <div
               key={id}
-              className="flex-1 grid grid-cols-12 gap-6 border-b border-white/[0.04] items-center group hover:bg-white/[0.012] transition-colors px-0"
+              className="flex flex-col gap-4 py-6 md:py-0 md:grid md:grid-cols-12 md:gap-6 md:flex-1 border-b border-white/[0.04] items-start md:items-center group hover:bg-white/[0.012] transition-colors px-0"
             >
               <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{id}</span>
 
@@ -166,7 +166,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
               <div className="col-span-2 flex items-center">
                 <div
                   className="relative overflow-hidden bg-white/[0.04] border border-white/[0.07] flex items-center justify-center"
-                  style={{ width: "clamp(48px, 13vw, 230px)", height: "clamp(48px, 13vw, 230px)" }}
+                  style={{ width: "clamp(96px, 13vw, 230px)", height: "clamp(96px, 13vw, 230px)" }}
                 >
                   {photo ? (
                     <Image src={photo} alt={name} fill className="object-cover" />
@@ -251,7 +251,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
               </div>
 
               {/* Since */}
-              <div className="col-span-1 text-right">
+              <div className="col-span-1 md:text-right">
                 <span className="text-[9px] font-mono text-white/50 tracking-widest">{since}</span>
               </div>
             </div>
@@ -260,13 +260,13 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-white/[0.06] px-8 md:px-14 py-3 flex items-center justify-between shrink-0">
+      <footer className="border-t border-white/[0.06] px-6 md:px-14 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 shrink-0">
         <Link href={`/${lang}`} className="group flex items-center gap-2 text-[9px] font-mono text-white/45 hover:text-white/80 tracking-widest uppercase transition-colors">
           <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
           {dict.common.backToIndex}
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-[9px] font-mono text-white/40 tracking-widest">{dict.people.footer}</span>
+          <span className="hidden sm:inline text-[9px] font-mono text-white/40 tracking-widest">{dict.people.footer}</span>
           <a
             href="mailto:contact@limiarcore.com"
             className="flex items-center gap-2 px-4 py-1.5 bg-[#CAFF00] text-black text-[9px] font-black tracking-widest uppercase hover:opacity-90 transition-opacity"
