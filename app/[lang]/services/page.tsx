@@ -75,7 +75,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
   const dict = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] flex flex-col md:overflow-hidden">
+    <main className="min-h-screen bg-[#080808] text-[#F0EEE9] flex flex-col">
 
       <SiteHeader lang={lang} dict={dict} active="services" />
 
@@ -136,7 +136,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           {services.map((s) => (
             <div
               key={s.id}
-              className="flex flex-col gap-2.5 py-5 md:py-0 md:grid md:grid-cols-12 md:gap-6 md:flex-1 border-b border-white/[0.04] items-start md:items-center group hover:bg-white/[0.012] transition-colors"
+              className="flex flex-col gap-2.5 py-5 md:py-4 md:grid md:grid-cols-12 md:gap-6 md:flex-1 border-b border-white/[0.04] items-start md:items-center group hover:bg-white/[0.012] transition-colors"
             >
               <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{s.id}</span>
 

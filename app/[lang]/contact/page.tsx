@@ -15,7 +15,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   const dict = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] flex flex-col md:overflow-hidden">
+    <main className="min-h-screen bg-[#080808] text-[#F0EEE9] flex flex-col">
 
       <SiteHeader lang={lang} dict={dict} active="contact" />
 

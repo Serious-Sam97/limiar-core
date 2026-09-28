@@ -97,7 +97,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
   const dict = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] flex flex-col md:overflow-hidden">
+    <main className="min-h-screen bg-[#080808] text-[#F0EEE9] flex flex-col">
 
       <SiteHeader lang={lang} dict={dict} active="people" />
 
@@ -158,7 +158,7 @@ export default async function PeoplePage({ params }: { params: Promise<{ lang: s
           {team.map(({ id, name, role, bio, tags, since, photo, initials, linkedin, github }) => (
             <div
               key={id}
-              className="flex flex-col gap-4 py-6 md:py-0 md:grid md:grid-cols-12 md:gap-6 md:flex-1 border-b border-white/[0.04] items-start md:items-center group hover:bg-white/[0.012] transition-colors px-0"
+              className="flex flex-col gap-4 py-6 md:py-4 md:grid md:grid-cols-12 md:gap-6 md:flex-1 border-b border-white/[0.04] items-start md:items-center group hover:bg-white/[0.012] transition-colors px-0"
             >
               <span className="col-span-1 text-[9px] font-mono text-[#CAFF00]/50 tracking-widest">{id}</span>
 

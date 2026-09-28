@@ -22,7 +22,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const dict = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen md:h-screen bg-[#080808] text-[#F0EEE9] md:overflow-hidden flex flex-col">
+    <main className="min-h-screen bg-[#080808] text-[#F0EEE9] flex flex-col">
 
       {/* ── SINGLE VIEWPORT — split layout ── */}
       <div className="flex-1 grid grid-cols-1 md:grid-cols-[1fr_clamp(280px,22vw,420px)]">

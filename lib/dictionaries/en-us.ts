@@ -21,6 +21,8 @@ const dict = {
     soon: "Soon",
     visitSite: "Visit site →",
     noPreview: "No preview yet",
+    readMore: "Read more",
+    readLess: "Read less",
   },
   cols: {
     id: "ID",

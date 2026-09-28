@@ -28,12 +28,29 @@ const projects: ProjectSource[] = [
     category: { "en-us": "Web · Product", "pt-br": "Web · Produto" },
     year: "2026",
     status: "IN BUILD",
-    icon: "/parliamo.png",
+    icon: "/parliamo/parliamo.png",
     url: "https://www.parliamo.com.br",
-    images: ["/parliamo01.png", "/parliamo02.png"],
+    images: ["/parliamo/01.jpeg", "/parliamo/02.jpeg", "/parliamo/03.jpeg", "/parliamo/04.jpeg", "/parliamo/05.jpeg", "/parliamo/06.jpeg", "/parliamo/07.jpeg", "/parliamo/08.jpeg"],
+    // images: ["/parliamo/parliamo01.png", "/parliamo/parliamo02.png"],
     details: {
-      "en-us": "Parliamo is the real-time collaboration platform that turns corporate conversations into real productivity. By combining topic-based channels, direct messaging, and smart integrations within a fluid, intuitive interface, Parliamo is designed to bring teams closer, align projects, and eliminate the noise of daily communication—because collaboration should be as natural as a good conversation.",
-      "pt-br": "O Parliamo é a plataforma de colaboração em tempo real que transforma conversas corporativas em produtividade real. Combinando canais por tópico, mensagens diretas e integrações inteligentes em uma interface fluida e intuitiva, o Parliamo foi projetado para aproximar equipes, alinhar projetos e eliminar o ruído da comunicação diária — porque colaborar deveria ser tão natural quanto uma boa conversa.",
+      "en-us": `Parliamo is where your company's work happens — and stays on the record.
+
+Channels, threads and direct messages for the everyday. Voice and video calls with live transcription, each person reading in their own language, and the minutes ready the moment the meeting ends.
+
+Inside that same conversation you open the document the team writes together, the whiteboard with no edges, and the editor where the interface gets designed. None of them needs AI to work — it steps in when you call for it.
+
+And the intelligence running through all of it has no privileges of its own: it reaches exactly what you could already open. Never one message more.
+
+Web, desktop and mobile, on the same backend. Self-hosted, if that's what you want — your data stays where you put it.`,
+      "pt-br": `O Parliamo é onde o trabalho da sua empresa acontece — e fica registrado.
+
+Canais, threads e mensagens diretas para o dia a dia. Chamadas de voz e vídeo com transcrição ao vivo, cada pessoa lendo no próprio idioma, e a ata pronta quando a reunião acaba.
+
+Dentro da mesma conversa abrem o documento que o time escreve junto, o quadro branco de superfície infinita e o editor onde a interface é desenhada. Nenhum deles depende de IA para funcionar: ela entra quando você chama.
+
+E a inteligência que atravessa tudo isso não tem privilégio nenhum — ela alcança exatamente o que você já poderia abrir. Nunca uma mensagem a mais.
+
+Web, computador e celular, sobre o mesmo servidor. E rodando na sua casa, se você quiser: o dado fica onde você mandar.`,
     },
   },
   {
@@ -50,9 +67,9 @@ Feito para times que realmente entregam.`,
     category: { "en-us": "Web · Product", "pt-br": "Web · Produto" },
     year: "2026",
     status: "IN BUILD",
-    icon: "/yondra.png",
+    icon: "/yondra/yondra.png",
     url: "https://www.yondra.net",
-    images: ["/yondra01.png", "/yondra02.png", "/yondra03.png"],
+    images: ["/yondra/01.png", "/yondra/02.png", "/yondra/03.png", "/yondra/04.png", "/yondra/05.png"],
     details: {
       "en-us": `Yondra is a streamlined project management platform built for modern dev teams — think Jira, without the bloat.
 Track issues, plan sprints, and ship faster with an interface that gets out of your way. From backlog grooming to deployment, Yondra keeps your team aligned and your workflow moving.
@@ -60,6 +77,64 @@ Built for teams who actually ship.`,
       "pt-br": `O Yondra é uma plataforma enxuta de gestão de projetos feita para times de desenvolvimento modernos — como o Jira, sem o excesso.
 Acompanhe tarefas, planeje sprints e entregue mais rápido com uma interface que sai do seu caminho. Do refinamento do backlog ao deploy, o Yondra mantém seu time alinhado e o fluxo em movimento.
 Feito para times que realmente entregam.`,
+    },
+  },
+  {
+    id: "LC-003",
+    name: "Melea",
+    blurb: {
+      "en-us": `Melea is a management system for veterinary clinics, built after a year of listening to veterinarians, receptionists, and clinic owners.
+
+The complaints were always the same: overly complicated systems, mandatory fields that no one uses, and the same data being entered in three different places. The result is familiar—notes are scribbled in a notebook during the week, with everything left to be entered into the system on Friday. Meanwhile, during consultations, the professional's attention shifts to the screen instead of focusing on the animal and the owner.
+
+Melea was designed to solve these two problems.
+
+It covers the entire workflow: scheduling, check-in, the daily queue, and voice-based calling on waiting room TVs; SOAP medical records with AI transcription, digital signatures, and immutable history; prescriptions, vaccination records, and test results; inventory and pharmacy management with tracking for batches, expiration dates, and weight-based dosing; hospitalization, surgery, and grooming services; billing, health plans, cash management, electronic invoice issuance, and direct card terminal integration; as well as broader management tools—staffing, scheduling and time tracking, commissions, approval workflows, performance metrics, and auditing.
+
+Each clinic has its own database, isolated from the others. Access is role-based—reception, exam room, pharmacy, administration—and each device in the clinic can be configured as a specific station: reception, exam room, pharmacy, or display screen. Pet owners have their own portal, featuring their pet's history, scheduling options, and LGPD data privacy rights.
+
+Created by people who know what its like to sit in the waiting room and look at the front desk.`,
+      "pt-br": `O Melea é um sistema de gestão para clínicas veterinárias, construído a partir de um ano ouvindo veterinários, recepcionistas e donos de clínica.
+
+A queixa era sempre a mesma: sistema complicado demais, campo obrigatório que ninguém usa, o mesmo dado digitado em três lugares. O resultado é conhecido — anota-se na caderneta durante a semana e deixa-se tudo para lançar na sexta-feira. E, no meio do atendimento, a atenção do profissional vai para a tela em vez de ir para o animal e para o tutor.
+
+O Melea foi desenhado contra esses dois problemas.
+
+Ele cobre o atendimento inteiro: agendamento, check-in, fila do dia e chamada por voz na TV da sala de espera; prontuário SOAP com transcrição por IA, assinatura e histórico que não pode ser alterado; receituário, carteira de vacinas e exames; estoque e farmácia com controle de lote, validade e dose por peso; internação, cirurgia e banho e tosa; faturamento, planos de saúde, caixa, emissão de NFS-e e cobrança direto na maquininha; e a gestão em volta — equipe, escala e ponto, comissões, aprovações, indicadores e auditoria.
+
+Cada clínica tem seu próprio banco de dados, isolado dos demais. O acesso é por papel — recepção, consultório, farmácia, administração — e cada aparelho da clínica pode ser configurado como uma estação: recepção, sala, farmácia ou televisão. O tutor tem portal próprio, com histórico do pet, agendamento e os direitos de LGPD.
+
+Feito por quem senta na cadeira da sala de espera e olha o balcão.`,
+    },
+    category: { "en-us": "Web · Product", "pt-br": "Web · Produto" },
+    year: "2026",
+    status: "IN BUILD",
+    icon: "/melea/melea.png",
+    url: "https://www.melea.com.br",
+    images: ["/melea/01.jpeg", "/melea/02.jpeg", "/melea/03.jpeg", "/melea/04.jpeg", "/melea/05.jpeg", "/melea/06.jpeg", "/melea/07.jpeg", ],
+    details: {
+      "en-us": `Melea is a management system for veterinary clinics, built after a year of listening to veterinarians, receptionists, and clinic owners.
+
+The complaints were always the same: overly complicated systems, mandatory fields that no one uses, and the same data being entered in three different places. The result is familiar—notes are scribbled in a notebook during the week, with everything left to be entered into the system on Friday. Meanwhile, during consultations, the professional's attention shifts to the screen instead of focusing on the animal and the owner.
+
+Melea was designed to solve these two problems.
+
+It covers the entire workflow: scheduling, check-in, the daily queue, and voice-based calling on waiting room TVs; SOAP medical records with AI transcription, digital signatures, and immutable history; prescriptions, vaccination records, and test results; inventory and pharmacy management with tracking for batches, expiration dates, and weight-based dosing; hospitalization, surgery, and grooming services; billing, health plans, cash management, electronic invoice issuance, and direct card terminal integration; as well as broader management tools—staffing, scheduling and time tracking, commissions, approval workflows, performance metrics, and auditing.
+
+Each clinic has its own database, isolated from the others. Access is role-based—reception, exam room, pharmacy, administration—and each device in the clinic can be configured as a specific station: reception, exam room, pharmacy, or display screen. Pet owners have their own portal, featuring their pet's history, scheduling options, and LGPD data privacy rights.
+
+Created by people who know what its like to sit in the waiting room and look at the front desk.`,
+      "pt-br": `O Melea é um sistema de gestão para clínicas veterinárias, construído a partir de um ano ouvindo veterinários, recepcionistas e donos de clínica.
+
+A queixa era sempre a mesma: sistema complicado demais, campo obrigatório que ninguém usa, o mesmo dado digitado em três lugares. O resultado é conhecido — anota-se na caderneta durante a semana e deixa-se tudo para lançar na sexta-feira. E, no meio do atendimento, a atenção do profissional vai para a tela em vez de ir para o animal e para o tutor.
+
+O Melea foi desenhado contra esses dois problemas.
+
+Ele cobre o atendimento inteiro: agendamento, check-in, fila do dia e chamada por voz na TV da sala de espera; prontuário SOAP com transcrição por IA, assinatura e histórico que não pode ser alterado; receituário, carteira de vacinas e exames; estoque e farmácia com controle de lote, validade e dose por peso; internação, cirurgia e banho e tosa; faturamento, planos de saúde, caixa, emissão de NFS-e e cobrança direto na maquininha; e a gestão em volta — equipe, escala e ponto, comissões, aprovações, indicadores e auditoria.
+
+Cada clínica tem seu próprio banco de dados, isolado dos demais. O acesso é por papel — recepção, consultório, farmácia, administração — e cada aparelho da clínica pode ser configurado como uma estação: recepção, sala, farmácia ou televisão. O tutor tem portal próprio, com histórico do pet, agendamento e os direitos de LGPD.
+
+Feito por quem senta na cadeira da sala de espera e olha o balcão.`,
     },
   },
 ];
@@ -81,6 +156,8 @@ export default async function ProjectsPage({ params }: { params: Promise<{ lang:
     soon: dict.common.soon,
     visitSite: dict.common.visitSite,
     noPreview: dict.common.noPreview,
+    readMore: dict.common.readMore,
+    readLess: dict.common.readLess,
   };
 
   return (

@@ -28,6 +28,8 @@ export default async function ClientsPage({ params }: { params: Promise<{ lang: 
     soon: dict.common.soon,
     visitSite: dict.common.visitSite,
     noPreview: dict.common.noPreview,
+    readMore: dict.common.readMore,
+    readLess: dict.common.readLess,
   };
 
   return (

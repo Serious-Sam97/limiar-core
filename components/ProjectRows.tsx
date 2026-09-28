@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useCallback, type CSSProperties } from "react";
+import { useState, useEffect, useLayoutEffect, useRef, useCallback, type CSSProperties } from "react";
 
 export type Project = {
   id: string;
@@ -21,6 +21,8 @@ export type RowLabels = {
   soon: string;
   visitSite: string;
   noPreview: string;
+  readMore: string;
+  readLess: string;
 };
 
 const DEFAULT_LABELS: RowLabels = {
@@ -28,7 +30,51 @@ const DEFAULT_LABELS: RowLabels = {
   soon: "Soon",
   visitSite: "Visit site →",
   noPreview: "No preview yet",
+  readMore: "Read more",
+  readLess: "Read less",
 };
+
+// Short description under the project name. Long text is clamped to a few
+// lines with a Read more / Read less toggle; the toggle only appears when the
+// text actually overflows the clamp.
+function Blurb({ text, labels }: { text: string; labels: RowLabels }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [overflows, setOverflows] = useState(false);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const measure = () => {
+      if (!expanded) setOverflows(el.scrollHeight > el.clientHeight + 1);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [text, expanded]);
+
+  return (
+    <div className="flex flex-col items-start gap-1.5">
+      <p
+        ref={ref}
+        className={`text-white/55 text-xs leading-snug whitespace-pre-line ${expanded ? "" : "line-clamp-3"}`}
+      >
+        {text}
+      </p>
+      {(overflows || expanded) && (
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          className="text-[9px] font-mono tracking-widest uppercase text-[var(--accent)] opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
+        >
+          {expanded ? labels.readLess : labels.readMore} {expanded ? "↑" : "↓"}
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function ProjectRows({
   projects,
@@ -117,7 +163,7 @@ export default function ProjectRows({
                     {id}
                   </span>
                 </div>
-                <span className="text-white/55 text-xs leading-snug">{blurb}</span>
+                <Blurb text={blurb} labels={labels} />
               </div>
             </div>
 
@@ -192,7 +238,7 @@ export default function ProjectRows({
               >
                 {name}
               </button>
-              <span className="text-white/55 text-xs leading-snug">{blurb}</span>
+              <Blurb text={blurb} labels={labels} />
             </div>
 
             <div className="col-span-2">

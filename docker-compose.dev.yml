@@ -1,0 +1,23 @@
+# Dev container with hot reload.
+#   docker compose -f docker-compose.dev.yml up --build
+# Edit files locally; the app at http://localhost:3000 reloads on save.
+name: limiar-core-dev
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    image: limiar-core-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    volumes:
+      - .:/app
+      # Keep the container's own node_modules (Linux binaries) and build cache
+      # instead of the host's.
+      - /app/node_modules
+      - /app/.next

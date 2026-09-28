@@ -28,7 +28,7 @@ export default function SiteHeader({
   accent?: string;
 }) {
   return (
-    <header className="border-b border-white/[0.06] px-6 md:px-14 py-4 flex items-center justify-between shrink-0">
+    <header className="sticky top-0 z-50 bg-[#080808] border-b border-white/[0.06] px-6 md:px-14 py-4 flex items-center justify-between shrink-0">
       <div className="flex items-center gap-3">
         <Link href={`/${lang}`}>
           <span

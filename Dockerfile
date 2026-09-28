@@ -11,6 +11,20 @@ FROM base AS deps
 COPY package.json package-lock.json ./
 RUN npm ci
 
+# ---- Dev ----
+# Hot-reload dev server. Source is bind-mounted at runtime (see
+# docker-compose.dev.yml), so only node_modules lives in the image.
+# Uses webpack instead of Turbopack: file events don't cross Docker bind
+# mounts on macOS/Windows, and webpack's WATCHPACK_POLLING picks them up
+# reliably where Turbopack's poller does not.
+FROM base AS dev
+COPY --from=deps /app/node_modules ./node_modules
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV WATCHPACK_POLLING=true
+EXPOSE 3000
+CMD ["npx", "next", "dev", "--webpack", "--hostname", "0.0.0.0", "--port", "3000"]
+
 # ---- Builder ----
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules

@@ -21,9 +21,27 @@ body {
 
 ::selection { background: var(--acid); color: #000; }
 
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: var(--acid); }
+/* ── Scrollbar — thin acid rail on a black track ── */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track {
+  background: var(--black);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(202, 255, 0, 0.55);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--acid); }
+::-webkit-scrollbar-corner { background: var(--black); }
+
+/* Firefox (no ::-webkit-scrollbar support) */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(202, 255, 0, 0.55) var(--black);
+  }
+}
 
 /* ── Animations ── */
 

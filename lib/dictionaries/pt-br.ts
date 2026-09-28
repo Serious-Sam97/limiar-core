@@ -24,6 +24,8 @@ const dict: typeof enDict = {
     soon: "Em breve",
     visitSite: "Visitar site →",
     noPreview: "Sem prévia ainda",
+    readMore: "Ler mais",
+    readLess: "Ler menos",
   },
   cols: {
     id: "ID",

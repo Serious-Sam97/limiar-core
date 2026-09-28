@@ -87,6 +87,8 @@ export default async function ExperimentalPage({ params }: { params: Promise<{ l
     soon: dict.common.soon,
     visitSite: dict.common.visitSite,
     noPreview: dict.common.noPreview,
+    readMore: dict.common.readMore,
+    readLess: dict.common.readLess,
   };
 
   return (
